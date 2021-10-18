@@ -10,49 +10,72 @@ You'll also need the following permissions for your secure application model, to
 - Click on Azure Active Directory, now click on “App Registrations”.
 - Find your Secure App Model application. You can search based on the ApplicationID.
 - Go to “API Permissions” and click Add a permission.
-- Choose “Microsoft Graph” and “Delegated permission”.
+- Choose “Microsoft Graph” and “Delegated permission” or "Application Permissions"
 - Add the permission you need.
 - Finally, click on “Grant Admin Consent for Company Name.
 
 ## Permissions
 
-For full functionality, you'll need the following permissions for your Secure Application Model:
+For full functionality, you'll need the following permissions for your Secure Application Model. You can remove any permissions if you do not want the application to be able to use that functionality.
 
-- Application.ReadWrite.All
-- AuditLog.Read.All
-- Channel.ReadBasic.All
-- ChannelMember.ReadWrite.All
-- Device.Read.All
-- DeviceManagementConfiguration.ReadWrite.All
-- Directory.AccessAsUser.All
-- Directory.Read.All
-- Group.ReadWrite.All
-- Mail.Send
-- Mail.Send.Shared
-- Policy.Read.All
-- Policy.Read.ConditionalAccess
-- Policy.Read.PermissionGrant
-- Policy.ReadWrite.ApplicationConfiguration
-- Policy.ReadWrite.AuthenticationFlows
-- Policy.ReadWrite.AuthenticationMethod
-- Policy.ReadWrite.Authorization
-- Policy.ReadWrite.ConditionalAccess
-- Policy.ReadWrite.ConsentRequest
-- Policy.ReadWrite.DeviceConfiguration
-- Policy.ReadWrite.FeatureRollout
-- Policy.ReadWrite.MobilityManagement
-- Policy.ReadWrite.PermissionGrant
-- Policy.ReadWrite.TrustFramework
-- Reports.Read.All
-- SecurityEvents.Read.All
-- Sites.Read.All
-- TeamMember.Read.All
-- Team.ReadBasic.All
-- User.Read
-- User.ReadWrite.All
-
-
-If you don't want people to be able to write, remove the read/write permission for Read. 
+| API / Permissions name                                  | Type                   | Description                                                       |
+| ------------------------------------------------------- | ---------------------- | ----------------------------------------------------------------- |
+| Application.Read.All                                    | Delegated              | Read applications                                                 |
+| Application.ReadWrite.All                               | Delegated              | Read and write all applications                                   |
+| AuditLog.Read.All                                       | Delegated              | Read audit log data                                               |
+| Channel.Create                                          | Delegated, Application | Create channels                                                   |
+| Channel.ReadBasic.All                                   | Delegated, Application | Read the names and descriptions of channels                       |
+| ChannelMember.Read.All                                  | Delegated, Application | Read the members of channels                                      |
+| ChannelMember.ReadWrite.All                             | Delegated, Application | Add and remove members from channels                              |
+| Device.Command                                          | Delegated              | Communicate with user devices                                     |
+| Device.Read                                             | Delegated              | Read user devices                                                 |
+| Device.Read.All                                         | Delegated              | Read all devices                                                  |
+| Device.ReadWrite.All                                    | Application            | Read and write devices                                            |
+| DeviceManagementApps.ReadWrite.All                      | Delegated, Application | Read and write Microsoft Intune apps                              |
+| DeviceManagementConfiguration.ReadWrite.All             | Delegated, Application | Read and write Microsoft Intune Device Configuration and Policies |
+| DeviceManagementManagedDevices.PrivilegedOperations.All | Application            | Perform user-impacting remote actions on Microsoft Intune devices |
+| DeviceManagementManagedDevices.Read.All                 | Application            | Read Microsoft Intune devices                                     |
+| DeviceManagementManagedDevices.ReadWrite.All            | Delegated, Application | Read and write Microsoft Intune devices                           |
+| DeviceManagementRBAC.Read.All                           | Application            | Read Microsoft Intune RBAC settings                               |
+| DeviceManagementRBAC.ReadWrite.All                      | Delegated, Application | Read and write Microsoft Intune RBAC settings                     |
+| DeviceManagementServiceConfig.Read.All                  | Application            | Read Microsoft Intune configuration                               |
+| DeviceManagementServiceConfig.ReadWrite.All             | Delegated, Application | Read and write Microsoft Intune configuration                     |
+| Directory.AccessAsUser.All                              | Delegated              | Access directory as the signed in user                            |
+| Directory.Read.All                                      | Application            | Read directory data                                               |
+| Group.Create                                            | Application            | Create groups                                                     |
+| Group.Read.All                                          | Application            | Read all groups                                                   |
+| Group.ReadWrite.All                                     | Delegated, Application | Read and write all groups                                         |
+| GroupMember.ReadWrite.All                               | Delegated, Application | Read and write group memberships                                  |
+| Mail.Send                                               | Delegated, Application | Send mail as a user                                               |
+| Mail.Send.Shared                                        | Delegated              | Send mail on behalf of others                                     |
+| Member.Read.Hidden                                      | Delegated              | Read hidden memberships                                           |
+| Organization.ReadWrite.All                              | Delegated, Application | Read and write organization information                           |
+| Policy.Read.All                                         | Delegated, Application | Read your organization's policies                                 |
+| Policy.ReadWrite.AuthenticationFlows                    | Delegated, Application | Read and write authentication flow policies                       |
+| Policy.ReadWrite.AuthenticationMethod                   | Delegated, Application | Read and write authentication method policies                     |
+| Policy.ReadWrite.Authorization                          | Delegated              | Read and write your organization's authorization policy           |
+| Policy.ReadWrite.ConsentRequest                         | Delegated, Application | Read and write consent request policy                             |
+| Policy.ReadWrite.DeviceConfiguration                    | Delegated              | Read and write your organization's device configuration policies  |
+| PrivilegedAccess.Read.AzureResources                    | Delegated              | Read privileged access to Azure resources                         |
+| PrivilegedAccess.ReadWrite.AzureADGroup                 | Application            | Read and write privileged access to Azure AD groups               |
+| PrivilegedAccess.ReadWrite.AzureResources               | Delegated              | Read and write privileged access to Azure resources               |
+| profile                                                 | Delegated              | View users' basic profile                                         |
+| Reports.Read.All                                        | Delegated, Application | Read all usage reports                                            |
+| RoleManagement.ReadWrite.Directory                      | Delegated, Application | Read and write directory RBAC settings                            |
+| SecurityActions.ReadWrite.All                           | Delegated              | Read and update your organization's security actions              |
+| SecurityEvents.Read.All                                 | Application            | Read your organization’s security events                          |
+| SecurityEvents.ReadWrite.All                            | Delegated              | Read and update your organization’s security events               |
+| Sites.FullControl.All                                   | Application            | Have full control of all site collections                         |
+| Sites.ReadWrite.All                                     | Delegated              | Edit or delete items in all site collections                      |
+| Team.Create                                             | Delegated              | Create teams                                                      |
+| Team.ReadBasic.All                                      | Delegated, Application | Read the names and descriptions of teams                          |
+| TeamMember.ReadWrite.All                                | Delegated, Application | Add and remove members from teams                                 |
+| TeamMember.ReadWriteNonOwnerRole.All                    | Delegated, Application | Add and remove members with non-owner role for all teams          |
+| User.ManageIdentities.All                               | Delegated              | Manage user identities                                            |
+| User.ReadWrite.All                                      | Delegated, Application | Read and write all users' full profiles                           |
+| UserAuthenticationMethod.Read.All                       | Delegated              | Read all users' authentication methods                            |
+| UserAuthenticationMethod.ReadWrite                      | Delegated              | Read and write user authentication methods                        |
+| UserAuthenticationMethod.ReadWrite.All                  | Delegated, Application | Read and write all users' authentication methods.                 
 
 
 ## Getting started
@@ -75,6 +98,12 @@ The first 20 minutes the application can respond pretty slow, this is due to dow
 ## It's not working, I'm having issues
 
 Before you create an issue, please restart both the Static Web App and Azure Function host, this solves 99,9% of all issues. Turn it off, turn it on again. ;)
+
+## I can't deploy in my region
+
+This is most likely because of the Azure Static Web Apps component. This component is global by default (it picks the datacenter closest to you.) but some regions don't allow deployment. Use the alternative installation button. This will deploy in Central US; but the app will still be located in your nearest datacenter so you won't notice any latency.
+
+[![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FKelvinTegelaar%2FCIPP%2Fmaster%2FDocumentation%2FAzureDeploymentTemplate_regionoptions.json)
 # Adding a custom domain name
 
 At the moment of deployment, the application will use a randomly generated name. To change this, go to your Resource Group in Azure, click on cipp-swa-xxxx and click on Custom Domains. You'll be able to add your own domain name here.

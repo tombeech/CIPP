@@ -1,7 +1,6 @@
 
 $(document).ready(function () {
-
-
+    var todayDate = new Date().toISOString().slice(0, 10);
     var oTable = $('.datatable-1').dataTable(
         {
             language: {
@@ -29,37 +28,37 @@ $(document).ready(function () {
             },
             dom: 'fBlrtip',
             buttons: [
-                { extend: 'copyHtml5', className: 'btn btn-primary' },
-                { extend: 'excelHtml5', className: 'btn btn-primary' },
-                { extend: 'csvHtml5', className: 'btn btn-primary' },
-                { extend: 'pdfHtml5', className: 'btn btn-primary' },
+                { extend: 'copyHtml5', className: 'btn btn-primary btn-sm' },
+                { extend: 'excelHtml5', className: 'btn btn-primary btn-sm', title: 'Tenant Management List - ' + todayDate, exportOptions: {columns: [ 0,1 ]}   },
+                { extend: 'csvHtml5', className: 'btn btn-primary btn-sm', title: 'Tenant Management List - ' + todayDate, exportOptions: {columns: [ 0,1 ]}  },
+                { extend: 'pdfHtml5', className: 'btn btn-primary btn-sm', orientation: 'landscape', title: 'Tenant Management List - ' + todayDate, exportOptions: {columns: [ 0,1 ]} },
             ],
             "columns": [
                 { "data": "displayName" },
                 { "data": "defaultDomainName" },
                 {
                     "data": "customerId",
-                    render: function (customerId, type, row) { return '<a href="https://portal.office.com/Partner/BeginClientSession.aspx?CTID=' + customerId + '&CSDEST=o365admincenter"><i class="fas fa-cog fa-fw"></i></a>' }
+                    render: function (customerId, type, row) { return '<a target="_blank" target="_blank" href="https://portal.office.com/Partner/BeginClientSession.aspx?CTID=' + customerId + '&CSDEST=o365admincenter"><i class="fas fa-cog fa-fw"></i></a>' }
                 },
                 {
                     "data": "defaultDomainName",
-                    render: function (defaultDomainName, type, row) { return '<a href="https://outlook.office365.com/ecp/?rfr=Admin_o365&exsvurl=1&delegatedOrg=' + defaultDomainName + '""><i class="fas fa-cog fa-fw"></i></a>' }
+                    render: function (defaultDomainName, type, row) { return '<a target="_blank" href="https://outlook.office365.com/ecp/?rfr=Admin_o365&exsvurl=1&delegatedOrg=' + defaultDomainName + '""><i class="fas fa-cog fa-fw"></i></a>' }
                 },
                 {
                     "data": "defaultDomainName",
-                    render: function (defaultDomainName, type, row) { return '<a href="https://aad.portal.azure.com/' + defaultDomainName + '"><i class="fas fa-cog fa-fw"></i></a>' }
+                    render: function (defaultDomainName, type, row) { return '<a target="_blank" href="https://aad.portal.azure.com/' + defaultDomainName + '"><i class="fas fa-cog fa-fw"></i></a>' }
                 },
                 {
                     "data": "defaultDomainName",
-                    render: function (defaultDomainName, type, row) { return '<a href="https://admin.teams.microsoft.com/?delegatedOrg=' + defaultDomainName + '"><i class="fas fa-cog fa-fw"></i></a>' }
+                    render: function (defaultDomainName, type, row) { return '<a target="_blank" href="https://admin.teams.microsoft.com/?delegatedOrg=' + defaultDomainName + '"><i class="fas fa-cog fa-fw"></i></a>' }
                 },
                 {
                     "data": "defaultDomainName",
-                    render: function (defaultDomainName, type, row) { return '<a href="https://portal.azure.com/' + defaultDomainName + '""><i class="fas fa-cog fa-fw"></i></a>' }
+                    render: function (defaultDomainName, type, row) { return '<a target="_blank" href="https://portal.azure.com/' + defaultDomainName + '""><i class="fas fa-cog fa-fw"></i></a>' }
                 },
                 {
                     "data": "defaultDomainName",
-                    render: function (defaultDomainName, type, row) { return '<a href="https://endpoint.microsoft.com/' + defaultDomainName + '"><i class="fas fa-cog fa-fw"></i></a>' }
+                    render: function (defaultDomainName, type, row) { return '<a target="_blank" href="https://endpoint.microsoft.com/' + defaultDomainName + '"><i class="fas fa-cog fa-fw"></i></a>' }
                 },
 
                 { "data": "domains" }

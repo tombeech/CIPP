@@ -21,28 +21,23 @@ $(document).ready(function () {
             responsive: true,
             "ajax": {
 
-                "url": "/api/ListSites?type=SharePointSiteUsage&Tenantfilter=" + TenantID,
+                "url": "/api/ListMailboxStatistics?Tenantfilter=" + TenantID,
                 "dataSrc": "",
             },
             dom: 'fBlrtip',
             buttons: [
                 { extend: 'copyHtml5', className: 'btn btn-primary btn-sm' },
-                { extend: 'excelHtml5', className: 'btn btn-primary btn-sm', title: 'Sharepoint List - ' + TenantID + " - " + todayDate, exportOptions: {columns: [ 0,1,2,3,4,5,6 ]}   },
-                { extend: 'csvHtml5', className: 'btn btn-primary btn-sm', title: 'Sharepoint List - ' + TenantID + " - " + todayDate, exportOptions: {columns: [ 0,1,2,3,4,5,6 ]}  },
-                { extend: 'pdfHtml5', className: 'btn btn-primary btn-sm', orientation: 'landscape', title: 'Sharepoint List - ' + TenantID + " - " + todayDate, exportOptions: {columns: [ 0,1,2,3,4,5,6 ]} },
+                { extend: 'excelHtml5', className: 'btn btn-primary btn-sm', title: 'Mailbox Statistics - ' + TenantID + " - " + todayDate  },
+                { extend: 'csvHtml5', className: 'btn btn-primary btn-sm', title: 'Mailbox Statistics - ' + TenantID + " - " + todayDate },
+                { extend: 'pdfHtml5', className: 'btn btn-primary btn-sm', orientation: 'landscape', title: 'Mailbox Statistics - ' + TenantID + " - " + todayDate },
             ],
             "columns": [
-                { "data": "displayName" },
                 { "data": "UPN" },
-                { "data": "LastActive" },
-                { "data": "FileCount" },
+                { "data": "displayName" },
+                { "data": "LastActive" },                
                 { "data": "UsedGB" },
-                { "data": "Allocated" },
-                { "data": "URL" },
-                {
-                    "data": "UPN",
-                    render: function (id, type, row) { return '<a href=index.html?page=EditGroup&GroupID=' + id + '&Tenantfilter=' + TenantID + '><i class="fas fa-cog fa-fw"></i></a>'; }
-                }
+                { "data": "ItemCount" },
+                { "data": "HasArchive" },
             ],
             "order": [[0, "asc"]],
         });

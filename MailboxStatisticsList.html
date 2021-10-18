@@ -6,7 +6,7 @@
                     <div class="col-auto mb-3">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="user"></i></div>
-                            Teams List
+                            Mailbox Statistics
                         </h1>
                     </div>
                     <div class="col-12 col-xl-auto mb-3">
@@ -33,28 +33,30 @@
             </datalist>
         </div><br>
         <div class="card">
-            <div class="card-header">Teams list</div>
+            <div class="card-header">Mailbox Statistics</div>
             <div class="card-body">
                 <table id="datatablesSimple">
                     <table cellpadding="0" cellspacing="0" class="datatable-1 table table-striped" width="100%">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Visibility</th>
-                                <th>Alias</th>
-                                <th>Actions</th>
+                                <th>UPN</th>
+                                <th>Display Name</th>
+                                <th>Last Active</th>
+                                <th>Used (GB)</th>
+                                <th>Item Count (Total)</th>
+                                <th>Has Archive</th>
                             </tr>
                         </thead>
                         <tbody id='AccountTable'>
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Visibility</th>
-                                <th>Alias</th>
-                                <th>Actions</th>
+                                <th>UPN</th>
+                                <th>Display Name</th>
+                                <th>Last Active</th>
+                                <th>Used (GB)</th>
+                                <th>Item Count (Total)</th>
+                                <th>Has Archive</th>
                             </tr>
                         </tfoot>
                     </table>
@@ -64,7 +66,7 @@
 </main>
 <script src="js/datatables/jquery.dataTables.js"></script>
 <script src="js/tenantlist.js"></script>
-<script src="js/datatables/datatablesTeams.js"></script>
+<script src="js/datatables/datatablesMailboxStatistics.js"></script>
 
 </body>
 
